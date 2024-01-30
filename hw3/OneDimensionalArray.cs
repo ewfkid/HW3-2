@@ -9,6 +9,7 @@ namespace hw3
             {
                 total += value;
             }
+
             return Math.Round((double)total / array.Length, 2);
         }
 
@@ -18,6 +19,7 @@ namespace hw3
             {
                 Console.Write(value + " ");
             }
+
             Console.WriteLine();
         }
     }

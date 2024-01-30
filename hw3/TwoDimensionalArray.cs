@@ -6,7 +6,7 @@ namespace hw3
         {
             int total = 0;
             int count = 0;
-    
+
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
@@ -27,11 +27,11 @@ namespace hw3
                 {
                     Console.Write(array[i, j] + " ");
                 }
+
                 Console.WriteLine();
             }
+
             Console.WriteLine();
         }
     }
-
 }
-
