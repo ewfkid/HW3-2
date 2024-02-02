@@ -22,6 +22,17 @@
             });
             jaggedArray.PrintArray();
             Console.WriteLine("Среднее значение в зубчатом массиве: " + jaggedArray.GetAverage());
+
+            OneDimensionalArray dimensionalArray = new OneDimensionalArray(new int[10]);
+            Console.WriteLine("Массив, заполненный рандомными значениями : ");
+            dimensionalArray.FillArrayWithRandomValues();
+            dimensionalArray.PrintArray();
+            dimensionalArray.FillArrayFromUserInput();
+            Console.WriteLine("Массив, заполненный пользователем с клавиатуры : ");
+            dimensionalArray.PrintArray();
+            dimensionalArray.RecreateArray(new int[] { 1, 2, 3, 4, 5 });
+            Console.WriteLine("Пересозданный массив: ");
+            dimensionalArray.PrintArray();
         }
     }
 }

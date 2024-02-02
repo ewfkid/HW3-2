@@ -1,7 +1,14 @@
 namespace hw3
 {
-    public sealed class JaggedArray(int[][] array) : Array
+    public sealed class JaggedArray : ArrayBase
     {
+        private int[][] array;
+
+        public JaggedArray(int[][] array)
+        {
+            this.array = array;
+        }
+
         public override double GetAverage()
         {
             int total = 0;
@@ -30,6 +37,43 @@ namespace hw3
 
                 Console.WriteLine();
             }
+        }
+
+        public override void FillArrayFromUserInput()
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine("Введите количество столбцов");
+                int columns = int.Parse(Console.ReadLine());
+                array[i] = new int[columns];
+
+                for (int j = 0; j < columns; j++)
+                {
+                    Console.WriteLine($"Введите элемент массива с индексами: {i} {j}");
+                    array[i][j] = int.Parse(Console.ReadLine());
+                }
+            }
+        }
+
+        public override void FillArrayWithRandomValues()
+        {
+            Random rnd = new Random();
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                int columns = rnd.Next(1, 10);
+                array[i] = new int[columns];
+
+                for (int j = 0; j < columns; j++)
+                {
+                    array[i][j] = rnd.Next(-100, 100);
+                }
+            }
+        }
+
+        public void RecreateArray(int[][] newArray)
+        {
+            array = newArray;
         }
     }
 }
